@@ -1,0 +1,20 @@
+  .sidebar {
+    border-right: 1px solid var(--twitter-background);
+  }
+
+
+/* 这里是为了覆盖MUI默认的样式所以必须加! important */
+/* text-transform: inhert是为了去除默认的字体大写 */
+/* inhert基础父样式，这里没有样式就最原始状态 */
+.sidebar__tweet {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  height: 50px !important;
+  margin-top: 20px !important;
+}
+
+
