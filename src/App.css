@@ -6,7 +6,14 @@ body {
   --twitter-background: #e6ecf0;
 }
 
-
+/* 100vh可以让app在高度方向占满整个屏幕 */
+/* max-width+margin可以控制app宽度不铺满,居中显示 */
+/* padding 10px让左侧多10px空隙 */
 .app {
   display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 10px;
 }

@@ -1,7 +1,20 @@
-  .sidebar {
+/* 前面定义了App是flex，这里设置0.3表示边栏占app-flex的30% */
+.sidebar {
     border-right: 1px solid var(--twitter-background);
-  }
+    flex: 0.3;
+    min-width: 250px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+/* font-size调整icon大小，需要加！important */
+.sidebar__tweetIcon {
+  color: var(--twitter-color);
+  font-size: 30px !important;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
 
 /* 这里是为了覆盖MUI默认的样式所以必须加! important */
 /* text-transform: inhert是为了去除默认的字体大写 */
