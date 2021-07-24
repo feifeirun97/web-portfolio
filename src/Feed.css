@@ -1,7 +1,7 @@
 /* min-width:fit-content可以保证看到全部内容  */
 /* overflow-y:scroll当内容超过feed框架时，可以在y轴出现滚动条*/
 .feed {
-  flex: 0.4;
+  flex: 0.5;
   border-right: 1px solid var(--twitter-background);
   min-width: fit-content;
   overflow-y: scroll;

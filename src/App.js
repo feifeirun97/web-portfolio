@@ -15,7 +15,7 @@ function App() {
       <Feed />
 
       {/* Widgets */}
-      {/* <Widgets /> */}
+      <Widgets />
     </div>
   );
 }
