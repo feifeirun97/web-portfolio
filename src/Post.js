@@ -4,42 +4,38 @@ import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './Post.css'
 
 //post的用户名认证账号id 用的span
 //部分icon用了MUI自带参数fontSize="small"
-function Post({
-  displayName,
-  username,
-  verfiled,
-  text,
-  image,
-  avator
-}) {
+
+//用到了forwardRef，为了flip move动画
+//key用的text，当不唯一时可以用object id[doc.id]
+const Post = forwardRef(
+  ({ displayName,username,verfiled,text,image,avator }, ref) => {
   return (
-    <div className="post">
+    <div className="post" ref={ref}>
       <div className="post__avator">
-        <Avatar src="https://i.pinimg.com/736x/3b/74/bc/3b74bca401101300aba962b2d867a209.jpg"/>
+        <Avatar src={avator}/>
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Rafeh Qazi{"  "}
+              {displayName}{"  "}
               <span className="post__headerUsername">
-                <VerifiedUserIcon  className="post__badge"/>
-                @feifeirun97
+                {verfiled && <VerifiedUserIcon  className="post__badge"/>}
+                @{username}
               </span>
             </h3>
             <div className="post__headerDescription">
-              <p>Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.Uhank you.</p>
+              <p>{text}</p>
             </div>
           </div>          
         </div>
         <img 
-          src="https://media3.giphy.com/media/kiBcwEXegBTACmVOnE/giphy.gif?cid=ecf05e475f0mxniimhziyihwvc0e2roilqbvrra8qi3ewvuv&rid=giphy.gif&ct=g"
-          alt="img loadfailed" 
+          src={image}
         />
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
@@ -51,6 +47,6 @@ function Post({
       </div>
     </div>
   )
-}
+});
 
 export default Post;
